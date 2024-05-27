@@ -1,0 +1,58 @@
+.admin-panel {
+  background-color: #f8f4f3;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  padding: 0 20px;
+  .title {
+    font-size: 1rem;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    margin-left: 30px;
+
+    .admin-text {
+      .title-admin {
+        color: #4a4a4a;
+        margin-right: 0.5rem;
+        font-weight: bold;
+      }
+
+      .badge {
+        background-color: #f84525; 
+        color: #fff; 
+        padding-left: 0.5rem; 
+        padding-right: 0.5rem; 
+        font-weight: bold; 
+        border-radius: 0.375rem;
+      }
+    }
+
+    .menu-text {
+      color: #a0a0a0; 
+      text-transform: capitalize; 
+    }
+  }
+
+  .menu {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    list-style: none;
+
+    .dropdown {
+      margin-right: 0.25rem;
+
+      .dropdown-toggle {
+        @include reset-btn;
+        color: #000;
+        margin-right: 1rem;
+        font-size: 20px;
+        border-radius: 0.375rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+  }
+}
