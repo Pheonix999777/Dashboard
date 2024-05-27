@@ -1,12 +1,68 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { CgMenuLeft } from "react-icons/cg";
-import { useSidebarProps, NavListItem } from "./useSidebarProps";
+import { TiHome } from "react-icons/ti";
+import { AiOutlineLayout } from "react-icons/ai";
+import { PiCylinderBold } from "react-icons/pi";
+import { MdOutlineMailOutline } from "react-icons/md";
+import { LuShoppingCart } from "react-icons/lu";
+import { BiWindows } from "react-icons/bi";
+import { PiRecord } from "react-icons/pi";
+import { CiCalendar } from "react-icons/ci";
+import { TbWaveSawTool } from "react-icons/tb";
 import "./styles.scss";
 
+interface NavItem {
+  path: string;
+  icon: JSX.Element;
+}
+
 const Sidebar: React.FC = () => {
-  const { navList } = useSidebarProps();
   const [activeItem, setActiveItem] = useState<number>(0);
+
+  const navList: NavItem[] = [
+    {
+      path: "/home",
+      icon: <TiHome />,
+    },
+    {
+      path: "/about",
+      icon: <AiOutlineLayout />,
+    },
+    {
+      path: "/wave",
+      icon: <TbWaveSawTool />,
+    },
+    {
+      path: "/faq",
+      icon: <PiCylinderBold />,
+    },
+    {
+      path: "/window",
+      icon: <BiWindows />,
+    },
+    {
+      path: "/email",
+      icon: <MdOutlineMailOutline />,
+    },
+
+    {
+      path: "/cart",
+      icon: <LuShoppingCart />,
+    },
+    {
+      path: "/",
+      icon: <TiHome />,
+    },
+    {
+      path: "/record",
+      icon: <PiRecord />,
+    },
+    {
+      path: "/calendar",
+      icon: <CiCalendar />,
+    },
+  ];
 
   const handleItemClick = (index: number) => {
     setActiveItem(index);
@@ -19,7 +75,7 @@ const Sidebar: React.FC = () => {
       </button>
       <nav className="sidebar__nav">
         <ul className="sidebar__ul">
-          {navList.map((item: NavListItem, index: number) => (
+          {navList.map((item: NavItem, index: number) => (
             <li
               className={`sidebar__list  ${
                 activeItem === index ? "sidebar__list-color" : ""
