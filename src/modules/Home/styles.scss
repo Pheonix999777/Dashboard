@@ -595,6 +595,18 @@
   }
 
   .dashboard__chart-container {
+    height: 250px;
+  }
+}
+
+@media screen and (max-width: 687px) {
+  .dashboard__chart-container {
+    height: 210px;
+  }
+}
+
+@media screen and (max-width: 588px) {
+  .dashboard__chart-container {
     height: 200px;
   }
 }
@@ -650,7 +662,7 @@
   }
 
   .dashboard__chart-container {
-    height: 140px;
+    height: 170px;
   }
 
   .dashboard__inp-box {
@@ -671,7 +683,17 @@
   }
 }
 
+@media screen and (max-width: 548px) {
+  .dashboard__chart-container {
+    height: 160px;
+  }
+}
+
 @media screen and (max-width: 442px) {
+  .dashboard__chart-box {
+    margin-right: 0;
+  }
+
   .svg {
     margin-left: 20px;
     margin-right: 20px;
@@ -688,8 +710,7 @@
   }
 
   .dashboard__chart-container {
-    max-width: 400px;
-    height: 120px;
+    height: 140px;
   }
 
   .dashboard__circle-container {
@@ -701,6 +722,12 @@
     margin-left: 0;
     display: flex;
     gap: 8px;
+  }
+}
+
+@media screen and (max-width: 410px) {
+  .dashboard__chart-container {
+    height: 120px;
   }
 }
 
@@ -738,5 +765,23 @@
   .dashboard__btn {
     padding: 11px 40px;
     margin-top: 15px;
+  }
+
+  .dashboard__proggresbar-text {
+    font-size: 12px;
+  }
+
+  .dashboard__proggresbar-spn {
+    font-size: 12px;
+
+    margin-left: 25px;
+  }
+
+  .dashboard__proggresbar-value {
+    font-size: 12px;
+  }
+
+  .dashboard {
+    padding: 22px 15px;
   }
 }

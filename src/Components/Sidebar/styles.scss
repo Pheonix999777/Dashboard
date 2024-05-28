@@ -77,3 +77,31 @@
     }
   }
 }
+
+@media screen and (max-width: 668px) {
+  .sidebar {
+    padding: 44px 15px;
+  }
+
+  .sidebar__list-color {
+    &::before {
+      left: -15px;
+    }
+  }
+}
+
+@media screen and (max-width: 495px) {
+  .sidebar {
+    padding: 44px 12px;
+  }
+
+  .sidebar__list-color {
+    &::before {
+      left: -13px;
+    }
+  }
+
+  .sidebar__link {
+    padding: 14px 18px;
+  }
+}

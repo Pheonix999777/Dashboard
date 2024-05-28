@@ -3,13 +3,14 @@ import { Link } from "react-router-dom";
 import { CgMenuLeft } from "react-icons/cg";
 import { TiHome } from "react-icons/ti";
 import { AiOutlineLayout } from "react-icons/ai";
-import { PiCylinderBold } from "react-icons/pi";
 import { MdOutlineMailOutline } from "react-icons/md";
 import { LuShoppingCart } from "react-icons/lu";
 import { BiWindows } from "react-icons/bi";
 import { PiRecord } from "react-icons/pi";
 import { CiCalendar } from "react-icons/ci";
 import { TbWaveSawTool } from "react-icons/tb";
+import { IoChatboxOutline } from "react-icons/io5";
+import { BsServer } from "react-icons/bs";
 import "./styles.scss";
 
 interface NavItem {
@@ -35,7 +36,7 @@ const Sidebar: React.FC = () => {
     },
     {
       path: "/faq",
-      icon: <PiCylinderBold />,
+      icon: <BsServer />,
     },
     {
       path: "/window",
@@ -45,15 +46,16 @@ const Sidebar: React.FC = () => {
       path: "/email",
       icon: <MdOutlineMailOutline />,
     },
+    {
+      path: "/chat",
+      icon: <IoChatboxOutline />,
+    },
 
     {
       path: "/cart",
       icon: <LuShoppingCart />,
     },
-    {
-      path: "/",
-      icon: <TiHome />,
-    },
+
     {
       path: "/record",
       icon: <PiRecord />,
