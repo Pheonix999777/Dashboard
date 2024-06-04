@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
 import { CgMenuLeft } from "react-icons/cg";
 import { TiHome } from "react-icons/ti";
 import { AiOutlineLayout } from "react-icons/ai";
@@ -20,51 +20,29 @@ interface NavItem {
 
 const Sidebar: React.FC = () => {
   const [activeItem, setActiveItem] = useState<number>(0);
+  const location = useLocation();
 
   const navList: NavItem[] = [
-    {
-      path: "/home",
-      icon: <TiHome />,
-    },
-    {
-      path: "/about",
-      icon: <AiOutlineLayout />,
-    },
-    {
-      path: "/wave",
-      icon: <TbWaveSawTool />,
-    },
-    {
-      path: "/faq",
-      icon: <BsServer />,
-    },
-    {
-      path: "/window",
-      icon: <BiWindows />,
-    },
-    {
-      path: "/email",
-      icon: <MdOutlineMailOutline />,
-    },
-    {
-      path: "/chat",
-      icon: <IoChatboxOutline />,
-    },
-
-    {
-      path: "/cart",
-      icon: <LuShoppingCart />,
-    },
-
-    {
-      path: "/record",
-      icon: <PiRecord />,
-    },
-    {
-      path: "/calendar",
-      icon: <CiCalendar />,
-    },
+    { path: "/home", icon: <TiHome /> },
+    { path: "/about", icon: <AiOutlineLayout /> },
+    { path: "/wave", icon: <TbWaveSawTool /> },
+    { path: "/faq", icon: <BsServer /> },
+    { path: "/window", icon: <BiWindows /> },
+    { path: "/email", icon: <MdOutlineMailOutline /> },
+    { path: "/chat", icon: <IoChatboxOutline /> },
+    { path: "/cart", icon: <LuShoppingCart /> },
+    { path: "/record", icon: <PiRecord /> },
+    { path: "/calendar", icon: <CiCalendar /> },
   ];
+
+  useEffect(() => {
+    const activeIndex = navList.findIndex(
+      (item) => item.path === location.pathname
+    );
+    if (activeIndex !== -1) {
+      setActiveItem(activeIndex);
+    }
+  }, [location.pathname]);
 
   const handleItemClick = (index: number) => {
     setActiveItem(index);
@@ -79,14 +57,14 @@ const Sidebar: React.FC = () => {
         <ul className="sidebar__ul">
           {navList.map((item: NavItem, index: number) => (
             <li
-              className={`sidebar__list  ${
+              className={`sidebar__list ${
                 activeItem === index ? "sidebar__list-color" : ""
               }`}
               key={index}
               onClick={() => handleItemClick(index)}
             >
               <Link
-                className={`sidebar__link  ${
+                className={`sidebar__link ${
                   activeItem === index ? "sidebar__link-color" : ""
                 }`}
                 to={item.path}
